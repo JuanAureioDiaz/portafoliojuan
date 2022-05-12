@@ -132,3 +132,38 @@ align-items: center;
   0% { width: 0; }
   100% { width: 60%; }
 }
+
+.button{
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.979);
+  padding: 7px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%;
+  height: 200%;
+  background: linear-gradient(115deg,blue,purple,pink,rgb(250, 249, 249));
+  background-size: 50% 100%;
+  border-radius: inherit;
+}
+.button:hover::before{
+  animation:animate_border.75s linear infinite;
+}
+.button span{
+display: block;
+background:linear-gradient(250deg,rgb(209, 149, 189),rgb(52, 49, 206));
+padding: 20px 100px;
+border-radius: px;
+position:relative ;
+z-index: 2;
+}
+@keyframes animate_border{
+  to{transform: translateX(-50%);}
+}
